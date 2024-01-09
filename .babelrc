@@ -1,0 +1,10 @@
+{
+  "presets": ["@babel/env", "@babel/preset-react", "@babel/preset-typescript"],
+  "plugins": [
+    // 直接通过babel 解析ts，需要配置修饰器相关的插件
+    ["@babel/plugin-proposal-decorators", { "legacy": true }], 
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    ["@babel/plugin-transform-private-methods", { "loose": true }],
+    ["@babel/plugin-transform-private-property-in-object", { "loose": true }]
+  ]
+}
