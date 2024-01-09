@@ -20,8 +20,20 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.s?[ac]ss$/,
+        use: [
+          'style-loader', 
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                // 配置一下生成module scss id 的规则，不然不好debug
+                localIdentName: '[local]_[hash:base64:10]'
+              }
+            }
+          }, 
+          'sass-loader'
+        ],
       },
     ],
   },
